@@ -4,7 +4,7 @@ defmodule Http.Application do
 
   def start(_type, _args) do
     children = [
-      {Http.PlugAdapter, plug: CurrentTime, port: 8080}
+      {Http.PlugAdapter, plug: Plug.Octopus, port: 8080}
     ]
 
     opts = [strategy: :one_for_one, name: Http.Supervisor]
